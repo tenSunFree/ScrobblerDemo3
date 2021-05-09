@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ScrobblerDemo3</string>
+    <!-- BottomNav -->
+    <string name="nav_charts">Home</string>
+    <string name="nav_history">History</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_settings">Settings</string>
+    <string name="error_history">Unable to refresh history</string>
+    <string name="error_charts">Unable to refresh charts</string>
+    <string name="error_details">Unable to refresh details</string>
+    <string name="error_profile">Unable to refresh profile</string>
+    <string name="error_search">Unable to load search results</string>
+</resources>

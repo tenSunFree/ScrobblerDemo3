@@ -1,0 +1,23 @@
+@file:Suppress("NOTHING_TO_INLINE")
+
+package com.example.scrobblerdemo3.common.extension
+
+interface Mapper<F, T> {
+    suspend fun map(from: F): T
+}
+
+interface ParameterMapper<F, T, P> {
+    suspend fun map(from: F, parameter: P): T
+}
+
+interface IndexedMapper<F, T> {
+    suspend fun map(index: Int, from: F): T
+}
+
+internal inline fun <F, T> Mapper<F, T>.forLists(): suspend (List<F>) -> List<T> {
+    return { list -> list.map { item -> map(item) } }
+}
+
+internal inline fun <F, T> IndexedMapper<F, T>.forLists(): suspend (List<F>) -> List<T> {
+    return { list -> list.mapIndexed { index, item -> map(index, item) } }
+}
